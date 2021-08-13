@@ -1,0 +1,33 @@
+{
+  "name": "budgettracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanVanDijck/BudgetTracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyanVanDijck/BudgetTracker/issues"
+  },
+  "homepage": "https://github.com/RyanVanDijck/BudgetTracker#readme",
+  "devDependencies": {
+    "cypress": "^8.2.0",
+    "jasmine": "^3.8.0",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.12",
+    "pg": "^8.7.1",
+    "pg-format": "^1.0.4",
+    "pg-hstore": "^2.3.4"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
