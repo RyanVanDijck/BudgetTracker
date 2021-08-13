@@ -1,3 +1,4 @@
+<div>
 <% items.map((item, index) => { %>
     <form method="POST" action='/item/<%= item.id %> ?_method=DELETE'>
         <p>Item Name: <%= item.name %></p>
@@ -6,3 +7,4 @@
         <input type="submit" value="Delete" name="deleteSubmit">
     </form>
 <% }) %>
+</div>

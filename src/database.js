@@ -13,9 +13,9 @@ class Database{
         })
     }
 
-    async addItem(name, cost){
-        const query = "INSERT INTO ITEMS(name,cost) VALUES ($1, $2)"
-        const values = [name, cost]
+    async addItem(name, cost, categoryID){
+        const query = "INSERT INTO items(name,cost, categoryID) VALUES ($1, $2, $3)"
+        const values = [name, cost, categoryID]
         try {
             const res = await this.pool.query(query, values)
           } catch (err) {
@@ -32,6 +32,20 @@ class Database{
 
     async getCatagoryNameByID(id){
         return await(this.pool.query(`SELECT name FROM category WHERE id=${id}`))
+    }
+
+    async getCategories(){
+        return await(this.pool.query("SELECT * FROM categories")); 
+    }
+
+    async addCategory(category){
+        const query = "INSERT INTO categories(name) VALUES ($1)"
+        category = [category]
+        try {
+            const res = await this.pool.query(query, category)
+          } catch (err) {
+            console.log(err.stack)
+          } 
     }
 }
 

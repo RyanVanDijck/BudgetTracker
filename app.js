@@ -22,11 +22,11 @@ app.listen(port, () => {
 })
 
 app.get('/', async (req,res) => {
-   const data = await app.locals.database.getItems()
-
+    const data = await app.locals.database.getItems()
+    const categories = await app.locals.database.getCategories(); 
     res.render('index', {
         items: data.rows,
-        database: app.locals.database
+        categories: categories.rows
     }); 
 })
 

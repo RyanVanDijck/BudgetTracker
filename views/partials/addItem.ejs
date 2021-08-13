@@ -2,6 +2,11 @@
     <form method="POST" action="/addItem">
         <input type="text" name="name" id="name" placeholder="Name of Item">
         <input type="number" name="cost" id ="cost" step="any">
+        <select name="categories" id="categories">
+            <% categories.map((item, index) => { %>
+                <option value="<%=item.id%>"><%=item.name%></option>
+            <%})%>
         <input type="submit" name="submitItem" id="submitItem"> 
+    </select>
     </form>
 </div>
