@@ -47,6 +47,16 @@ class Database{
             console.log(err.stack)
           } 
     }
+
+    async getCategoryTotals(){
+        const data =  await this.pool.query("select * from categories left join(select categoryid, sum(cost) from items group by categoryid) as test on categoryid = categories.id")
+        return data.rows
+    }
+
+    async getTotal(){
+        const data = await this.pool.query("SELECT sum(cost) from items");
+        return data.rows[0].sum;
+    }
 }
 
 module.exports = Database

@@ -10,4 +10,4 @@ CREATE TABLE categories(
     name VARCHAR(100) 
 );
 
-select categories.name, sum from categories right join(select categoryid,sum(cost) from items,categories group by categoryid) as test on categoryid = categories.id;
+INSERT INTO categories(name) values ('Bills');
